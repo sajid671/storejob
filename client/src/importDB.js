@@ -7,7 +7,7 @@ export const Data=()=>{
     const dispatch=useDispatch();
     useEffect(()=>
     {
-        axios.get('/product').then((products)=>{
+        axios.get('https://fakestoreapi.com/products').then((products)=>{
             dispatch(setProducts(products.data))
         })
     },[])
