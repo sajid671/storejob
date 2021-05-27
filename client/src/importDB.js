@@ -7,7 +7,7 @@ export const Data=()=>{
     const dispatch=useDispatch();
     useEffect(()=>
     {
-        axios.get('https://enigmatic-journey-93687.herokuapp.com/product').then((products)=>{
+        axios.get('/products').then((products)=>{
             dispatch(setProducts(products.data))
         })
     },[])
