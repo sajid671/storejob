@@ -1,5 +1,6 @@
 const express = require('express');
 var cors = require('cors')
+const bodyParser = require('body-parser');
 const connectDB=require('./config/db')
 const path = require("path");
 const GrocRouter = require('./controller/routers')
@@ -7,6 +8,7 @@ const port = process.env.PORT || 5000;
 
 connectDB();
 const app=express();
+app.use(bodyParser.json());
 app.use(cors())
 
 app.get("/",(req,res)=>{
