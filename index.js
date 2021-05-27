@@ -12,7 +12,7 @@ app.use(cors())
 app.get("/",(req,res)=>{
     res.send("Hello from my site")
 })
-app.use('/products',GrocRouter)
+app.use('/product',GrocRouter)
 
 
 
