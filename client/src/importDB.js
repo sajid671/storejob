@@ -7,7 +7,7 @@ export const Data=()=>{
     const dispatch=useDispatch();
     useEffect(()=>
     {
-        axios.get('http://localhost:3333/products').then((products)=>{
+        axios.get('/product').then((products)=>{
             dispatch(setProducts(products.data))
         })
     },[])
