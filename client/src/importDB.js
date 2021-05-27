@@ -5,12 +5,14 @@ import {setProducts} from './Redux/store'
 
 export const Data=()=>{
     const dispatch=useDispatch();
-    useEffect(()=>
-    {
-        axios.get('https://enigmatic-journey-93687.herokuapp.com/product').then((products)=>{
-            dispatch(setProducts(products.data))
-        })
-    },[])
+    useEffect(() => {
+    fetch('/product',{
+    })
+    .then(response => response.json())
+    .then(json => {
+        dispatch(setProducts(json.data))
+    })
+  }, []);
     return(
         <></>
     )
