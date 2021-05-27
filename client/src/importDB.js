@@ -7,7 +7,7 @@ export const Data=()=>{
     const dispatch=useDispatch();
     useEffect(()=>
     {
-        axios.get('/products').then((products)=>{
+        axios.get('/product').then((products)=>{
             dispatch(setProducts(products.data))
         })
     },[])
