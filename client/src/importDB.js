@@ -7,7 +7,7 @@ export const Data=()=>{
     const dispatch=useDispatch();
     useEffect(()=>
     {
-        axios.get('https://fakestoreapi.com/products').then((products)=>{
+        axios.get('https://enigmatic-journey-93687.herokuapp.com/product').then((products)=>{
             dispatch(setProducts(products.data))
         })
     },[])
