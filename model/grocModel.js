@@ -1,34 +1,13 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 
-const GrocerSchema = mongoose.Schema({
-    title:{
-        type:String,
-    },
-    type:{
-        type:String,
-    },
-    description:{
-        type:String,
-    },
-    image:{
-        type:String,
-    },
-    height:{
-        type:Number,
-    },
-    width:{
-        type:Number,
-    },
-    price:{
-        type:Number,
-    },
-    rating:{
-        type:Number,
-    },
-    qty:{
-        type:Number,
-    },
+const Schema = mongoose.Schema({
+    title: { type: String},
+    price: { type: Number},
+    qty: { type: Number},
+    image: { type: String},
+    
 })
 
-const Grocery = mongoose.model('grocery',GrocerSchema)
-module.exports=Grocery;
+const Model = mongoose.model("PCSchema",Schema);
+
+module.exports = Model;

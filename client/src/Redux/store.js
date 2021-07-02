@@ -1,5 +1,7 @@
 import { createStore, combineReducers } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import {persistStore,persistReducer} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const initialState = {
     products: [],
@@ -110,7 +112,13 @@ export const Remove = (item_id) => {
 //     }
 // }
 
-const reducer = combineReducers({ shop: grocReducer })
-const store = createStore(reducer, composeWithDevTools())
+const PersistConfig={
+    key:'root',
+    storage,
+}
 
-export default store;
+const reducer = combineReducers({ shop: grocReducer })
+const persistreducer = persistReducer(PersistConfig,reducer)
+const store = createStore(persistreducer, composeWithDevTools())
+const persistor = persistStore(store)
+export {store,persistor};

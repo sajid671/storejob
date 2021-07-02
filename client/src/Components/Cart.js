@@ -32,7 +32,7 @@ function CartJS() {
             Products.map(p => {
               return (
                 <tr>
-                  <th>{p._id}</th>
+                  <th><img src={p.image} style={{width:200,height:100}}/></th>
                   <td>{p.title}</td>
                   <td>{p.description}</td>
                   <td>

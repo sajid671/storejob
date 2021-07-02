@@ -9,18 +9,20 @@ const add = (_id) => dispatch(addtocart(_id))
     <div className="container border mt-4">
     <div className="row p-4">
     {
-      Products.map(prod=>{
+      Products.map(p=>{
         return(
-          <div className="row col-lg-3 col-md-4 col-sm-6">
-            <div key={prod._id} className="card" style={{width:300}}>
-            <img className="card-img-top" src={prod.image} alt="Card image cap"/>
-            <div className="card-body">
-              <h5 className="card-title">{prod.title}</h5>
-              <p className="card-text">{prod.description}</p>
-              <button className="btn btn-primary" onClick={()=>add(prod._id)}>ADD TO CART</button>
-            </div>
-          </div>
-          </div>
+                <div className="p-3 col-lg-4 col-md-3 col-sm-6">
+                <div className="card bg-secondary" style={{ width: '18rem' }}>
+                    <img src={p.image} className="card-img-top" alt="..." />
+                    <div className="card-body">
+                        <h5 className="card-title text-light">{p.title}</h5>
+                        <div className="mt-3 d-flex align-items-center justify-content-between">
+                        <h5 className="text-info">${p.price}</h5>
+                        <button className="btn btn-info fw-bold text-light" onClick={()=>add(p._id)}><i class="bi bi-cart3"></i> Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
         )
       })
     }
